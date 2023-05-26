@@ -5,6 +5,8 @@ AllCops:
     - 'vendor/**/*'
     - 'db/**/*'
     - 'tmp/**/*'
+    - 'log.rb'
+    - 'q.rb'
 
 # STYLE
 
