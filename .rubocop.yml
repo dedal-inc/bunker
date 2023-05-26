@@ -1,0 +1,121 @@
+# frozen_string_literal: true
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+
+# STYLE
+
+Style/Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: true
+
+Style/IndentationWidth:
+  Enabled: true
+  IndentationWidth: 2
+
+Style/VariableName:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 140
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: true
+  Max: 20
+  CountAsOne: ['array', 'hash', 'method_call']
+
+Naming/MethodParameterName:
+  MinNameLength: 2
+
+# LINT
+
+Lint/DuplicateBranch:
+  Enabled: true
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/ShadowedArgument:
+  Enabled: true
+
+Layout/AccessModifierIndentation:
+  Enabled: true
+
+Layout/SpaceBeforeBrackets:
+  Enabled: true
+
+Lint/AmbiguousAssignment:
+  Enabled: true
+
+Lint/DeprecatedConstants:
+  Enabled: true
+
+Lint/DuplicateRegexpCharacterClassElement:
+  Enabled: true
+
+Lint/EmptyBlock:
+  Enabled: true
+
+Lint/EmptyClass:
+  Enabled: true
+
+Lint/EmptyInPattern:
+  Enabled: true
+
+Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: true
+
+Lint/NumberedParameterAssignment:
+  Enabled: true
+
+Lint/OrAssignmentToConstant:
+  Enabled: true
+
+Lint/RedundantDirGlobSort:
+  Enabled: true
+
+Lint/SymbolConversion:
+  Enabled: true
+
+Lint/ToEnumArguments:
+  Enabled: true
+
+Lint/TripleQuotes:
+  Enabled: true
+
+Lint/UnexpectedBlockArity:
+  Enabled: true
+
+Lint/UnmodifiedReduceAccumulator:
+  Enabled: true
+
+# COMPLEXITY
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Max: 15
+
+Metrics/PerceivedComplexity:
+  Enabled: true
+  Max: 15
+
+# CONFIG
+
+Bundler/OrderedGems:
+  Enabled: true
