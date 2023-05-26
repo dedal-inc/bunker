@@ -49,8 +49,6 @@ services:
     restart: always
     ports:
       - 127.0.0.1:3306:3306
-    expose:
-      - 3306
     env_file:
       - ./env/.env
     volumes:
@@ -65,4 +63,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: "169.69.69.0/24"
+        # - subnet: "169.69.69.0/24"
+        - subnet: "172.16.232.0/24"
