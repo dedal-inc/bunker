@@ -3,7 +3,6 @@
 AllCops:
   Exclude:
     - 'vendor/**/*'
-    - 'db/**/*'
     - 'tmp/**/*'
     - 'log.rb'
     - 'q.rb'
