@@ -1,0 +1,68 @@
+version: '3'
+
+x-shared: &shared
+  build:
+    context: ./
+  image: bunker
+  depends_on:
+    - db
+  links:
+    - db
+  ports:
+    - 3000:3000
+  networks:
+    default:
+      aliases:
+        - app
+  volumes:
+    - .:/opt
+  command: rails s -p 3000 -b '0.0.0.0'
+
+services:
+  app:
+    <<: *shared
+    build:
+      target: development
+    container_name: bunker
+    env_file:
+      - ./env/.env
+
+  test:
+    <<: *shared
+    build:
+      target: test
+    container_name: bunker-test
+    env_file:
+      - ./env/.test.env
+
+  prod:
+    <<: *shared
+    build:
+      target: production
+    container_name: bunker-prod
+    env_file:
+      - ./env/.prod.env
+
+  db:
+    image: mysql:8.0
+    container_name: bunker-db
+    restart: always
+    ports:
+      - 127.0.0.1:3306:3306
+    expose:
+      - 3306
+    env_file:
+      - ./env/.env
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:
+
+networks:
+  default:
+    name: bunker-network
+    ipam:
+      driver: default
+      config:
+        - subnet: "169.69.69.0/24"
